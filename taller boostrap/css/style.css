@@ -1,0 +1,10 @@
+.nav-item {
+    background-color: red;
+}
+.nav-link-active{
+    background-color: blue;
+    color: antiquewhite;
+}
+.container{
+    background-color: rgb(255, 102, 0);
+}
