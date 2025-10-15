@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel Básico con Tailwind y JS</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-xl mx-auto">
+    <!-- Carrusel principal -->
+    <div id="carousel" class="relative overflow-hidden rounded-lg shadow-lg">
+      <!-- Contenedor de slides, se moverá horizontalmente -->
+      <div class="carousel-slides flex transition-transform duration-500" style="width: 300%">
+        <img src="img/gato.jpg" class="w-full object-cover" alt="Gato 1">
+        <img src="img/2.jpg" class="w-full object-cover" alt="Gato 2">
+        <img src="img/3.jpg" class="w-full object-cover" alt="Gato 3">
+      </div>
+      <!-- Botón anterior -->
+      <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow-md">
+        &#8592;
+      </button>
+      <!-- Botón siguiente -->
+      <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow-md">
+        &#8594;
+      </button>
+    </div>
+    <!-- Puntos indicadores -->
+    <div class="flex justify-center mt-4 gap-2" id="carousel-dots">
+      <button class="w-3 h-3 rounded-full bg-gray-400"></button>
+      <button class="w-3 h-3 rounded-full bg-gray-400"></button>
+      <button class="w-3 h-3 rounded-full bg-gray-400"></button>
+    </div>
+  </div>
+  <script>
+    // Seleccionamos los elementos principales del carrusel
+    const slides = document.querySelectorAll('.carousel-slides img'); // Todas las imágenes
+    const slidesContainer = document.querySelector('.carousel-slides'); // Contenedor de slides
+    const prevBtn = document.getElementById('prev'); // Botón anterior
+    const nextBtn = document.getElementById('next'); // Botón siguiente
+    const dots = document.querySelectorAll('#carousel-dots button'); // Puntos indicadores
+    let current = 0; // Índice de la imagen actual
+
+    // Función para actualizar la posición del carrusel y los puntos
+    function updateCarousel() {
+      // Movemos el contenedor de slides usando transform
+      slidesContainer.style.transform = `translateX(-${current * (100 / slides.length)}%)`;
+      // Actualizamos el color de los puntos
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-blue-500', i === current); // Activo
+        dot.classList.toggle('bg-gray-400', i !== current); // Inactivo
+      });
+    }
+
+    // Evento para ir a la imagen anterior
+    prevBtn.onclick = () => {
+      current = (current - 1 + slides.length) % slides.length;
+      updateCarousel();
+    };
+    // Evento para ir a la imagen siguiente
+    nextBtn.onclick = () => {
+      current = (current + 1) % slides.length;
+      updateCarousel();
+    };
+    // Evento para ir a la imagen seleccionada por el punto
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        current = i;
+        updateCarousel();
+      };
+    });
+    // Inicializamos el carrusel
+    updateCarousel();
+  </script>
+</body>
+</html>

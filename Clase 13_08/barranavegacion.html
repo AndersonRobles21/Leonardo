@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Barra de Navegación con Menú Hamburguesa</title>
+	<!-- Importa Tailwind CSS desde CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		// Configuración personalizada de Tailwind para agregar colores
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: "#1640AF",    // Azul personalizado
+						secundary: "#9333EA",  // Morado personalizado
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+	<!-- Barra de navegación principal -->
+	<nav class="bg-primary text-white px-4 py-3">
+		<div class="container mx-auto flex items-center justify-between">
+			<!-- Logo o nombre del sitio -->
+			<div class="font-bold text-xl">Cangreburgures</div>
+			<!-- Botón menú hamburguesa (solo visible en móvil) -->
+			<button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Abrir menú">
+				<!-- Icono hamburguesa SVG -->
+				<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+				</svg>
+			</button>
+			<!-- Menú de navegación para escritorio -->
+			<ul id="menu" class="hidden md:flex space-x-6 font-medium">
+				<li><a href="#" class="hover:text-secundary transition">Inicio</a></li>
+				<li><a href="#" class="hover:text-secundary transition">Servicios</a></li>
+				<li><a href="#" class="hover:text-secundary transition">Acerca</a></li>
+				<li><a href="#" class="hover:text-secundary transition">Contacto</a></li>
+			</ul>
+		</div>
+		<!-- Menú móvil (solo visible en pantallas pequeñas) -->
+		<ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-3 px-2">
+			<li><a href="#" class="block py-2 px-4 rounded hover:bg-secundary/20">Inicio</a></li>
+			<li><a href="#" class="block py-2 px-4 rounded hover:bg-secundary/20">Servicios</a></li>
+			<li><a href="#" class="block py-2 px-4 rounded hover:bg-secundary/20">Acerca</a></li>
+			<li><a href="#" class="block py-2 px-4 rounded hover:bg-secundary/20">Contacto</a></li>
+		</ul>
+	</nav>
+	<!-- Script para mostrar/ocultar el menú móvil -->
+	<script>
+		// Obtiene el botón y el menú móvil
+		const btn = document.getElementById('menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		// Al hacer clic en el botón, alterna la visibilidad del menú móvil
+		btn.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+	</script>
+</body>
+</html>

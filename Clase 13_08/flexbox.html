@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6: Flexbox Centrado</title>
+    <!-- Se incluye Tailwind CSS desde CDN para usar utilidades de estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración personalizada de Tailwind para agregar colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1640AF",
+                        secundary: "#9333EA",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Contenedor principal centrado y con padding -->
+    <div class="container mx-auto px-4 py-12">
+
+        <!-- Ejemplo 1: Centrado solo horizontal -->
+        <div class="mb-12">
+            <!-- Título del ejemplo -->
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6">Solo centrado horizontal</h2>
+            <!-- flex y justify-center centran horizontalmente el contenido -->
+            <div class="bg-white p-6 rounded-lg shadow-md flex justify-center">
+                <div class="text-center max-w-md">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Centrado Horizontal</h3>
+                    <p class="text-gray-600">Este contenido está centrado solo horizontalmente usando <code
+                            class="bg-gray-100 px-2 py-1 rounded">justify-center</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplo 2: Centrado solo vertical -->
+        <div class="mb-12">
+            <!-- Título del ejemplo -->
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6">Solo centrado vertical</h2>
+            <!-- flex y items-center centran verticalmente el contenido (altura fija con h-48) -->
+            <div class="h-48 bg-white rounded-lg shadow-md flex items-center pl-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Centrado Vertical</h3>
+                    <p class="text-gray-600">Este contenido está centrado solo verticalmente usando <code
+                            class="bg-gray-100 px-2 py-1 rounded">items-center</code></p>
+                </div>
+            </div>
+        </div>
+    <!-- Puedes agregar más ejemplos de flexbox aquí -->
+
+    </div>
+    
+</body>
+
+</html>

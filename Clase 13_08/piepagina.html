@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pie de página con Tailwind</title>
+	<!-- Carga Tailwind CSS desde CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Configuración personalizada de Tailwind -->
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: "#1640AF",   // Azul personalizado
+						secundary: "#9333EA", // Morado personalizado
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+	<!-- Contenido principal simulado -->
+	<main class="flex-grow"></main>
+
+	<!-- Pie de página con columnas -->
+	<footer class="bg-primary text-white py-8 mt-8">
+		<div class="max-w-6xl mx-auto px-4">
+			<!-- Grid de 3 columnas en desktop, 1 columna en móvil -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Columna 1: Información -->
+				<div>
+					<h2 class="text-lg font-bold mb-2">Sobre nosotros</h2>
+					<p class="text-sm">Somos una empresa dedicada a la innovación y el desarrollo web.</p>
+				</div>
+				<!-- Columna 2: Enlaces -->
+				<div>
+					<h2 class="text-lg font-bold mb-2">Enlaces útiles</h2>
+					<ul class="text-sm space-y-1">
+						<li><a href="#" class="hover:text-secundary transition-colors">Inicio</a></li>
+						<li><a href="#" class="hover:text-secundary transition-colors">Servicios</a></li>
+						<li><a href="#" class="hover:text-secundary transition-colors">Contacto</a></li>
+					</ul>
+				</div>
+				<!-- Columna 3: Contacto -->
+				<div>
+					<h2 class="text-lg font-bold mb-2">Contacto</h2>
+					<p class="text-sm">Email: info@ejemplo.com</p>
+					<p class="text-sm">Tel: +57 3104787055</p>
+				</div>
+			</div>
+			<!-- Línea divisoria -->
+			<div class="border-t border-white/20 mt-8 pt-4 text-center text-xs">
+				&copy; 2025 Mi Empresa. Todos los derechos reservados  a mi Anderson Topaga.
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

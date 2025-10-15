@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración personalizada de Tailwind para agregar colores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1640AF",   // Azul personalizado
+                        secundary: "#9333EA", // Morado personalizado
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Tabla sencilla con estilos y colores alternos -->
+    <div class="flex justify-center mt-10">
+        <table class="min-w-[400px] border border-primary rounded-lg overflow-hidden shadow-lg">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <!-- Encabezados de la tabla -->
+                    <th class="py-2 px-4">Nombre</th>
+                    <th class="py-2 px-4">Edad</th>
+                    <th class="py-2 px-4">Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fila 1: color alterno morado -->
+                <tr class="bg-secundary text-white">
+                    <td class="py-2 px-4">Ana</td>
+                    <td class="py-2 px-4">23</td>
+                    <td class="py-2 px-4">Madrid</td>
+                </tr>
+                <!-- Fila 2: fondo blanco -->
+                <tr class="bg-white text-primary">
+                    <td class="py-2 px-4">Luis</td>
+                    <td class="py-2 px-4">30</td>
+                    <td class="py-2 px-4">Barcelona</td>
+                </tr>
+                <!-- Fila 3: color alterno morado -->
+                <tr class="bg-secundary text-white">
+                    <td class="py-2 px-4">Sofía</td>
+                    <td class="py-2 px-4">27</td>
+                    <td class="py-2 px-4">Valencia</td>
+                </tr>
+                <!-- Fila 4: fondo blanco -->
+                <tr class="bg-white text-primary">
+                    <td class="py-2 px-4">Carlos</td>
+                    <td class="py-2 px-4">35</td>
+                    <td class="py-2 px-4">Sevilla</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>

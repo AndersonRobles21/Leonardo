@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuadros de Alerta Personalizados</title>
+    <!-- Tailwind para estilos rápidos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Oculta la alerta al hacer clic en cerrar */
+        .oculto { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold mb-6">Cuadros de Alerta Personalizados</h1>
+
+   
+    <!-- Alerta de Error -->
+    <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded shadow mb-4 flex items-center max-w-md w-full" id="alerta-error">
+        <span class="text-red-500 mr-2">❌</span>
+        <span class="flex-1 text-red-800">Error: No se pudo completar la operación.</span>
+        <button onclick="cerrar('alerta-error')" class="ml-2 text-red-500 hover:text-red-700">✖️</button>
+    </div>
+
+    <!-- Script para cerrar alertas -->
+    <script>
+        // Esta función oculta la alerta seleccionada
+        function cerrar(id) {
+            document.getElementById(id).classList.add('oculto');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+    <title>Ejercicio 2: Tarjeta con Imagen</title> <!-- Título de la pestaña -->
+    <!-- Importa Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración personalizada de Tailwind para colores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1640AF",
+                        secundary: "#9333EA",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 min-h-screen py-12"> <!-- Fondo gris claro y padding vertical -->
+    <div class="container mx-auto px-4"> <!-- Contenedor centralizado -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"> <!-- Grid responsiva para tarjetas -->
+            <!-- Tarjeta 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"> <!-- Tarjeta con fondo blanco, bordes redondeados y sombra -->
+                <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center"> <!-- Encabezado con gradiente y centrado -->
+                    <img src="./img/gato.jpg" alt=""> <!-- Imagen de la tarjeta -->
+                </div>
+                <div class="p-6"> <!-- Contenido de la tarjeta -->
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Gatos</h3> <!-- Título -->
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Los gatos son hermosos <!-- Descripción -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

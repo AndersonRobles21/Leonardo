@@ -1,0 +1,73 @@
+
+<!-- Documento HTML5 con idioma español -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+    <title>Ejercicio 5: Grid de 3 Columnas</title>
+    <!-- Importa Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración personalizada de Tailwind (colores)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1640AF", // Azul personalizado
+                        secundary: "#9333EA", // Morado personalizado
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body class="bg-gray-100 min-h-screen py-12"> <!-- Fondo gris claro, altura mínima pantalla, padding vertical -->
+    <div class="container mx-auto px-4"> <!-- Contenedor centrado y con padding horizontal -->
+        <!-- Grid básico de 3 columnas -->
+        <div class="mb-12"> <!-- Margen inferior -->
+            <!--
+                grid-cols-1: 1 columna en móvil
+                md:grid-cols-2: 2 columnas en pantallas medianas
+                lg:grid-cols-3: 3 columnas en pantallas grandes
+                gap-6: separación entre columnas y filas
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <!-- Encabezado con gradiente azul -->
+                    <div class="h-32 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-semibold">Columna 1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Título del Item 1</h3>
+                    <p class="text-gray-600 text-sm">Este es el contenido de la primera columna del grid. Mantiene espacios uniformes.</p>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <!-- Encabezado con gradiente verde -->
+                    <div class="h-32 bg-gradient-to-r from-green-400 to-green-600 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-semibold">Columna 2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Título del Item 2</h3>
+                    <p class="text-gray-600 text-sm">Este es el contenido de la segunda columna del grid. El espaciado es consistente.</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <!-- Encabezado con gradiente morado -->
+                    <div class="h-32 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-white font-semibold">Columna 3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Título del Item 3</h3>
+                    <p class="text-gray-600 text-sm">Este es el contenido de la tercera columna del grid. Todos los elementos están alineados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

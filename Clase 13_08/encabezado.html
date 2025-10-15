@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Encabezado Responsive</title>
+    <!-- Cargamos Tailwind CSS desde CDN para usar utilidades de estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración personalizada de Tailwind para agregar colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1640AF", // Azul personalizado
+                        secundary: "#9333EA", // Morado personalizado
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 min-h-screen"> <!-- Fondo gris claro y altura mínima pantalla completa -->
+    <div class="container mx-auto px-4 py-12"> <!-- Contenedor centrado con padding -->
+       
+        <!-- Encabezado principal responsive -->
+        <div class="text-center mb-12"> <!-- Centra el texto y agrega margen inferior -->
+            <h2 
+                class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold 
+                       text-red-600 sm:text-orange-600 md:text-green-600 lg:text-blue-600 xl:text-purple-600
+                       bg-red-100 sm:bg-orange-100 md:bg-green-100 lg:bg-blue-100 xl:bg-purple-100
+                       p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12
+                       rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl
+                       shadow-sm sm:shadow-md md:shadow-lg lg:shadow-xl
+                       transition-all duration-300">
+                <!--
+                    El texto y el fondo cambian de color y tamaño según el ancho de pantalla (breakpoints):
+                    - text-2xl ... xl:text-6xl: Tamaño de fuente responsive
+                    - text-red-600 ... xl:text-purple-600: Color de texto según breakpoint
+                    - bg-red-100 ... xl:bg-purple-100: Color de fondo según breakpoint
+                    - p-4 ... xl:p-12: Padding responsive
+                    - rounded-lg ... lg:rounded-3xl: Bordes redondeados responsive
+                    - shadow-sm ... lg:shadow-xl: Sombra responsive
+                -->
+                ¡Texto Responsive!
+            </h2>
+        </div>
+
+        <!-- Indicadores visuales de breakpoints activos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-8">
+            <!-- XS: Visible solo en pantallas pequeñas (<640px) -->
+            <div class="bg-red-500 text-white p-4 rounded-lg text-center sm:hidden">
+                <div class="text-sm font-semibold">XS (&lt; 640px)</div>
+                <div class="text-xs">Móvil pequeño</div>
+            </div>
+            <!-- SM: Visible solo en pantallas sm (>=640px y &lt;768px) -->
+            <div class="bg-orange-500 text-white p-4 rounded-lg text-center hidden sm:block md:hidden">
+                <div class="text-sm font-semibold">SM (640px+)</div>
+                <div class="text-xs">Móvil grande</div>
+            </div>
+            <!-- MD: Visible solo en pantallas md (>=768px y &lt;1024px) -->
+            <div class="bg-green-500 text-white p-4 rounded-lg text-center hidden md:block lg:hidden">
+                <div class="text-sm font-semibold">MD (768px+)</div>
+                <div class="text-xs">Tablet</div>
+            </div>
+            <!-- LG: Visible solo en pantallas lg (>=1024px y &lt;1280px) -->
+            <div class="bg-blue-500 text-white p-4 rounded-lg text-center hidden lg:block xl:hidden">
+                <div class="text-sm font-semibold">LG (1024px+)</div>
+                <div class="text-xs">Desktop</div>
+            </div>
+            <!-- XL: Visible solo en pantallas xl (>=1280px) -->
+            <div class="bg-purple-500 text-white p-4 rounded-lg text-center hidden xl:block">
+                <div class="text-sm font-semibold">XL (1280px+)</div>
+                <div class="text-xs">Desktop grande</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
