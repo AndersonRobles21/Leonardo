@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Inicio</title>
+		<meta charset="UTF-8" />
+	</head>
+	<style>
+		body{
+			background-color: rgb(255, 58, 58);
+			color: aliceblue;
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 20px;
+			margin-top: 70px;
+		}
+		input{
+			margin: 10px;
+			padding: 10px;
+			border-radius: 10px;
+			border: none;
+			font-size: 15px;
+		}
+		select{
+			margin: 10px;
+			padding: 10px;
+			border-radius: 10px;
+			border: none;
+			font-size: 15px;
+		}
+	</style>
+	<body>
+		<form action="recoger2.php" method="post">
+			<input type="text" name="nombre" size="20" placeholder="Escriba su nombre" /><br/>
+			<input type="number" name="Edad" min="10" max="75" placeholder="Edad" /><br/>
+			<input type="date" name="Fecha" placeholder="Fecha" /><br/>
+			<label for="VIP">Es usted un cliente vip ?</label><br/>
+			<input type="radio" name="VIP" value="si">Si<br/>
+			<input type="radio" name="VIP" value="no">No<br/>
+			<select name="Provincia">
+				<option>Madrid</option>
+				<option>Sevilla</option>
+				<option>Bilbao</option>
+				<option>Barcelona</option>
+			</select><br/><br/>
+			<input type="text" name="Ciudad_De_Origen" placeholder="Donde naciste" /><br/>
+			<input type="text" name="Direccion" placeholder="Digite Direccion" /><br/>
+			<input type="text" name="Telefono" placeholder="Digite Telefono" /><br/><br/>
+			<input type="submit" value="Guardar!!" /><br/>
+		</form>
+	</body>
+</html>
