@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AgroTech Solutions</title>
+</head>
+
+<body>
+    <div class="text-center mb-12"> <!-- Centra el texto y agrega margen inferior -->
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold 
+               text-red-600 sm:text-orange-600 md:text-green-600 lg:text-blue-600 xl:text-black-600
+               bg-red-100 sm:bg-orange-100 md:bg-green-100 lg:bg-blue-100 xl:bg-black-100
+               p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6
+               rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl
+               shadow-sm sm:shadow-md md:shadow-lg lg:shadow-xl
+               transition-all duration-300">
+            <!-- El texto y el fondo cambian de color y tamaño según el ancho de pantalla (breakpoints):
+                    - text-2xl ... xl:text-6xl: Tamaño de fuente responsive
+                    - text-red-600 ... xl:text-purple-600: Color de texto según breakpoint
+                    - bg-red-100 ... xl:bg-purple-100: Color de fondo según breakpoint
+                    - p-4 ... xl:p-12: Padding responsive
+                    - rounded-lg ... lg:rounded-3xl: Bordes redondeados responsive
+                    - shadow-sm ... lg:shadow-xl: Sombra responsive-->
+            Bienvenido a AgroTech
+        </h2>
+    </div>
+    <div class="text-center mb-6">
+        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl font-bold 
+               text-red-600 sm:text-orange-600 md:text-green-600 lg:text-blue-600 xl:text-black-600
+               bg-red-100 sm:bg-orange-100 md:bg-green-100 lg:bg-blue-100 xl:bg-black-100
+               p-2 sm:p-3 md:p-4 lg:p-5 xl:p-2
+               rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl
+               shadow-sm sm:shadow-md md:shadow-lg lg:shadow-xl
+               transition-all duration-300">Con que cargo deseas ingresar</p>
+    </div>
+    <br>
+    <br>
+<!-- Botones para que el usuario decida como debe ingresar y que funciones podra hacer-->
+    <div class="container mx-auto px-4">
+
+
+        <!-- Sección de botones básicos con diferentes sombras -->
+        <section class="mb-16">
+
+            <div class="flex flex-wrap justify-center gap-6">
+                <button 
+                   class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                   <a href="./registrosProductor.html">Productor Agricola</a>
+                    
+                </button>
+                <button
+                   class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    Tecnico
+                </button>
+                <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    Administrador
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
