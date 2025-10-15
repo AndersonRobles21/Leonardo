@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>CArro</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/carrito.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="semaforo shadow">
+            <div class="luz rojo" id="luz-roja"></div>
+            <div class="luz amarillo" id="luz-amarilla"></div>
+            <div class="luz verde" id="luz-verde"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col text-center">
+          <div id="road" class="mx-auto position-relative" style="height: 80px">
+            <img
+              id="car"
+              src="./img/carro.jpg"
+              alt="Coche"
+              style="position: absolute; left: 0; top: 20px"
+            />
+            <div id="meta" class="meta-style">
+              <div class="meta-flag"></div>
+              <div class="meta-flag"></div>
+              <div class="meta-flag"></div>
+              <div class="meta-flag"></div>
+              <span class="badge bg-dark ms-1">META</span>
+            </div>
+            <button
+              id="reiniciar"
+              class="btn btn-warning position-absolute top-50 end-0 translate-middle-y d-none"
+              style="z-index: 10"
+            >
+              Volver a iniciar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Array con los estados del semáforo en orden: rojo, amarillo, verde
+        let estados = ["rojo", "amarillo", "verde"];
+        // Array con los selectores de las luces del semáforo
+        let luces = ["#luz-roja", "#luz-amarilla", "#luz-verde"];
+        // Índice del estado actual del semáforo (0=rojo, 1=amarillo, 2=verde)
+        let actual = 0;
+        // Referencia al elemento del coche
+        let car = $("#car");
+        // Referencia al elemento de la carretera
+        let road = $("#road");
+        // Ancho del coche (en píxeles)
+        let carWidth = car.width();
+        // Referencia al elemento de la meta
+        let meta = $("#meta");
+        // Intervalo para el temporizador del semáforo
+        let intervalSemaforo = null;
+        // Intervalo para el movimiento del coche
+        let intervalCar = null;
+        // Indica si la carrera ha terminado
+        let finCarrera = false;
+        // Tiempos de duración de cada luz del semáforo (ms): [rojo, amarillo, verde]
+        let tiempos = [1000, 800, 2200];
+        // Velocidad del coche (ms entre movimientos, menor es más rápido)
+        let velocidadCarro = 100;
+        // Posiciona el coche al inicio de la carretera
+        car.css("left", 0);
+
+        /**
+         * Actualiza el semáforo encendiendo solo la luz correspondiente al estado actual.
+         * No recibe parámetros.
+         */
+        function actualizarSemaforo() {
+          for (let i = 0; i < luces.length; i++) {
+            $(luces[i]).removeClass("on"); // Apaga todas las luces
+          }
+          $(luces[actual]).addClass("on"); // Enciende la luz correspondiente
+        }
+
+        /**
+         * Inicia el ciclo automático del semáforo, cambiando de color según los tiempos definidos.
+         * No recibe parámetros. Utiliza el array tiempos para definir la duración de cada luz.
+         */
+        function cicloSemaforo() {
+          if (intervalSemaforo) clearTimeout(intervalSemaforo); // Limpia el temporizador anterior si existe
+          function siguiente() {
+            actual = (actual + 1) % 3; // Avanza al siguiente estado
+            actualizarSemaforo(); // Actualiza la luz
+            intervalSemaforo = setTimeout(siguiente, tiempos[actual]); // Programa el siguiente cambio
+          }
+          intervalSemaforo = setTimeout(siguiente, tiempos[actual]); // Inicia el ciclo
+        }
+
+        /**
+         * Mueve el coche hacia la meta solo cuando el semáforo está en verde.
+         * No recibe parámetros. Utiliza la variable velocidadCarro para la velocidad de movimiento.
+         * Cuando el coche llega a la meta, muestra el botón de reinicio.
+         */
+        function moverCarro() {
+          if (intervalCar) clearInterval(intervalCar); // Detiene cualquier movimiento anterior
+          finCarrera = false;
+          $("#reiniciar").addClass("d-none"); // Oculta el botón de reinicio
+          intervalCar = setInterval(function () {
+            // Solo avanza si el semáforo está en verde y la carrera no ha terminado
+            if (estados[actual] === "verde" && !finCarrera) {
+              let left = parseInt(car.css("left"));
+              let maxLeft = road.width() - carWidth - meta.width(); // Límite derecho
+              if (left < maxLeft) {
+                car.stop().animate({ left: "+=10px" }, velocidadCarro); // Mueve el coche
+              } else {
+                car.stop();
+                car.css("left", maxLeft); // Asegura que el coche no pase la meta
+                clearInterval(intervalCar); // Detiene el movimiento
+                finCarrera = true;
+                setTimeout(function () {
+                  $("#reiniciar").removeClass("d-none"); // Muestra el botón para reiniciar
+                }, 300);
+              }
+            }
+          }, velocidadCarro);
+        }
+
+        /**
+         * Evento para reiniciar la carrera: coloca el coche al inicio y lo vuelve a mover.
+         */
+        $("#reiniciar").click(function () {
+          car.css("left", 0);
+          moverCarro();
+        });
+
+        // Inicialización: enciende el semáforo, inicia el ciclo y mueve el coche
+        actualizarSemaforo();
+        cicloSemaforo();
+        moverCarro();
+      });
+    </script>
+  </body>
+</html>
