@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anteiko - El café salva vidas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50 text-brown-900 font-sans">
+    <!-- Encabezado -->
+    <header class="bg-yellow-900 text-yellow-300 px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="./img/logo.jpg" alt="Logo Anteiko" class="h-10 w-10 rounded-full bg-yellow-300 p-1">
+            <div>
+                <h1 class="text-xl font-bold">Anteiko</h1>
+                <span class="text-xs text-yellow-100">El café salva vidas</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="flex gap-4 text-yellow-100 text-sm">
+                <li><a href="#bienvenida" class="hover:text-yellow-300 transition">Inicio</a></li>
+                <li><a href="#catalogo" class="hover:text-yellow-300 transition">Catálogo</a></li>
+                <li><a href="#acerca" class="hover:text-yellow-300 transition">Acerca</a></li>
+                <li><a href="#contacto" class="hover:text-yellow-300 transition">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <section id="bienvenida" class="flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-10 bg-yellow-50">
+        <div class="lg:w-1/2 mt-8 lg:mt-0">
+            <h2 class="text-3xl font-bold mb-3 text-yellow-900">Bienvenido a Anteiko</h2>
+            <p class="mb-5 text-yellow-800">Descubre el sabor auténtico del café artesanal, cuidadosamente seleccionado y tostado para los paladares más exigentes.</p>
+            <a href="#catalogo" class="inline-block bg-yellow-400 text-yellow-900 px-5 py-2 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105">Ver catálogo</a>
+        </div>
+        <img src="./img/anteiko.jpg" alt="Taza de café" class="w-full max-w-xs rounded-lg shadow-lg hover:scale-105 transition">
+    </section>
+
+    <!-- Catálogo de productos -->
+    <section id="catalogo" class="px-4 py-10 bg-yellow-900">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-6 text-center">Nuestro Catálogo</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Producto 1 -->
+            <div class="bg-yellow-50 rounded-lg shadow p-4 flex flex-col items-center hover:scale-105 transition">
+                <img src="./img/cafe clasico.jpg" alt="Café Clásico" class="h-24 mb-2">
+                <h4 class="font-bold mb-1 text-yellow-900">Café Clásico</h4>
+                <p class="text-yellow-800 text-sm mb-1 text-center">Granos 100% arábica, tostado medio.</p>
+                <span class="text-yellow-700 font-bold mb-2">$18.000</span>
+                <button class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105 text-sm">Comprar</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="bg-yellow-50 rounded-lg shadow p-4 flex flex-col items-center hover:scale-105 transition">
+                <img src="./img/expreso.jpg" alt="Café Espresso" class="h-24 mb-2">
+                <h4 class="font-bold mb-1 text-yellow-900">Café Espresso</h4>
+                <p class="text-yellow-800 text-sm mb-1 text-center">Tostado oscuro, cuerpo intenso.</p>
+                <span class="text-yellow-700 font-bold mb-2">$20.000</span>
+                <button class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105 text-sm">Comprar</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="bg-yellow-50 rounded-lg shadow p-4 flex flex-col items-center hover:scale-105 transition">
+                <img src="./img/original.jpg" alt="Café Orgánico" class="h-24 mb-2">
+                <h4 class="font-bold mb-1 text-yellow-900">Café Orgánico</h4>
+                <p class="text-yellow-800 text-sm mb-1 text-center">Cultivado sin pesticidas, suave y floral.</p>
+                <span class="text-yellow-700 font-bold mb-2">$22.000</span>
+                <button class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105 text-sm">Comprar</button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="bg-yellow-50 rounded-lg shadow p-4 flex flex-col items-center hover:scale-105 transition">
+                <img src="./img/descafeinado.jpg" alt="Café Descafeinado" class="h-24 mb-2">
+                <h4 class="font-bold mb-1 text-yellow-900">Café Descafeinado</h4>
+                <p class="text-yellow-800 text-sm mb-1 text-center">Sabor auténtico sin cafeína.</p>
+                <span class="text-yellow-700 font-bold mb-2">$19.000</span>
+                <button class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105 text-sm">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de nosotros -->
+    <section id="acerca" class="px-4 py-10 bg-yellow-50 flex flex-col items-center">
+        <h3 class="text-2xl font-bold text-yellow-900 mb-3">Acerca de nosotros</h3>
+        <p class="max-w-xl text-center text-yellow-800">
+            En <span class="font-bold text-yellow-700">Anteiko</span> somos la salvacion de la gente que perdio el gusto por la comida y su unica salvacion es tomar de nuestro cafe 
+            salvamos la humanidad y sobrevivimos 
+        </p>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto" class="px-4 py-10 bg-yellow-900 flex flex-col items-center">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-3">Contáctanos</h3>
+        <form class="bg-yellow-50 rounded-lg shadow p-6 w-full max-w-md flex flex-col gap-3">
+            <input type="text" placeholder="Nombre" class="px-3 py-2 rounded-lg border border-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm" required>
+            <input type="email" placeholder="Correo electrónico" class="px-3 py-2 rounded-lg border border-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm" required>
+            <textarea placeholder="Mensaje" rows="3" class="px-3 py-2 rounded-lg border border-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm" required></textarea>
+            <button type="submit" class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-900 hover:text-yellow-200 transition hover:scale-105 text-sm">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-yellow-800 text-yellow-100 px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-sm">
+        <div class="flex gap-3">
+            <a href="#bienvenida" class="hover:text-yellow-300 transition">Inicio</a>
+            <a href="#catalogo" class="hover:text-yellow-300 transition">Catálogo</a>
+            <a href="#acerca" class="hover:text-yellow-300 transition">Acerca</a>
+            <a href="#contacto" class="hover:text-yellow-300 transition">Contacto</a>
+        </div>
+        <span class="text-xs text-yellow-300 mt-1 md:mt-0">Anderson Topaga Robles</span>
+    </footer>
+</body>
+</html>
