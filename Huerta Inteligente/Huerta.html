@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Huerta Inteligente</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/Estilo.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/decoracion.js"></script>
+  </head>
+  <body>
+    <header>
+        <section id="inicio">
+      <h1 id="bienvenida">¡Bienvenido a mi huerta inteligente!</h1>
+      </section>
+      <button id="btnMenu">Menú</button>
+      <div id="menuOverlay"></div>
+      <nav id="panelMenu">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#cultivos">Cultivos</a></li>
+          <li><a href="#clima">Clima</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+     
+        <!-- Galería de fotos de cultivos -->
+        <section id="galeriaCultivos">
+          <h2>Galería de Cultivos</h2>
+          <div class="galeria">
+            <img id="fotoCultivo" src="img/maiz.jpg" alt="Cultivo" />
+          </div>
+          <button id="anterior">Anterior</button>
+          <button id="siguiente">Siguiente</button>
+        </section>
+      <!-- Formulario de registro de siembras -->
+      <section id="registroSiembras">
+        <h2>Registrar Siembra</h2>
+        <form>
+          <label for="nombreCultivo">Nombre del cultivo:</label>
+          <input type="text" id="nombreCultivo" name="nombreCultivo" />
+          <div id="avisoNombre"></div>
+          <br />
+          <label for="fechaSiembra">Fecha de siembra:</label>
+          <input type="date" id="fechaSiembra" name="fechaSiembra" />
+          <div id="avisoFecha"></div>
+          <br />
+          <button type="submit">Registrar</button>
+        </form>
+      </section>
+
+      <!-- barras de producción -->
+      <section id="estadisticas">
+        <h2>Producción</h2>
+        <button id="verEstadisticas">Ver estadísticas</button>
+        <div class="barras">
+          <div class="barra" id="barraMaiz"><span>Maíz</span></div>
+          <div class="barra" id="barraCafe"><span>Café</span></div>
+          <div class="barra" id="barraHortalizas"><span>Hortalizas</span></div>
+          <div class="barra" id="barratomate"><span>Tomate</span></div>
+          <div class="barra" id="barrafrijol"><span>Frijo</span></div>
+        </div>
+      </section>
+
+      <!-- Lista de cultivos -->
+      <section id="cultivos">
+        <h2>Lista de Cultivos</h2>
+        <ul>
+          <li class="itemCultivo">Maíz</li>
+          <li class="itemCultivo">Café</li>
+          <li class="itemCultivo">Hortalizas</li>
+          <li class="itemCultivo">Frijol</li>
+          <li class="itemCultivo">Tomate</li>
+        </ul>
+      </section>
+
+      <!-- datos del clima -->
+      <section id="clima">
+        <h2>Clima</h2>
+        <button id="btnClima">Datos de clima</button>
+        <div id="datosClima">
+          <p>Temperatura: 24°C</p>
+          <p>Humedad: 70%</p>
+        </div>
+      </section>
+        <!-- Sección de Contáctanos -->
+      <section id="contacto">
+        <h2>Contáctanos</h2>
+        <form id="formContacto">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <br />
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+          <br />
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <br />
+          <button type="submit">Enviar</button>
+        </form>
+        <div id="respuestaContacto"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>φ(*￣0￣) d=====(￣▽￣*)b</p>
+    </footer>
+    <ul>
+        <li>1.	Menú que se despliega: ()</li>
+        <li>2.	Galería de fotos de cultivos: ()</li>
+        <li>3.	Formulario de registro de siembras: ()</li>
+        <li>4.	Animación de barras de producción: ()</li>
+        <li>5.	Efecto al pasar el mouse sobre una lista de cultivos: ()</li>
+        <li>6.	Mostrar/ocultar datos del clima: ()</li>
+        <li>7.	Mensaje de bienvenida animado: ()</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+/* Estilos generales del cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background: #e0ffe0;
+  margin: 0;
+  color: #2d4739;
+}
+/* Fuente y margen global para todos los elementos */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Encabezado principal de la página */
+body header {
+  background: #71ac74;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+/* Mensaje de bienvenida principal */
+#bienvenida {
+  text-align: center; /* Centra el texto */
+  font-size: 2em; /* Tamaño grande */
+  margin: 0.5em 0 1em 0; /* Espaciado */
+}
+/* Efecto hover para el botón de menú */
+#btnMenu:hover {
+  background: #b2f7ef;
+}
+/* Panel lateral del menú de navegación */
+#panelMenu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  left: 0;
+  top: 4em;
+  background: #2d4739; /* Fondo verde oscuro */
+  width: 180px;
+  border-radius: 0 10px 10px 0; /* Bordes redondeados a la derecha */
+  box-shadow: 2px 0 10px #0002; /* Sombra lateral */
+  z-index: 10;
+}
+/* Lista del menú lateral */
+#panelMenu ul {
+  list-style: none; /* Sin viñetas */
+ margin: 0;
+  padding: 0;
+}
+/* Separador entre opciones del menú */
+#panelMenu li {
+  border-bottom: 1px solid #388e3c;
+}
+/* Enlaces del menú lateral */
+#panelMenu a {
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  display: block; /* Ocupa todo el ancho */
+  padding: 1em; /* Espaciado */
+}
+/* Efecto hover en enlaces del menú */
+#panelMenu a:hover {
+  background: #388e3c;
+}
+/* Contenedor principal del contenido */
+main {
+  max-width: 900px;
+  margin: 2em auto;
+  background: #fff;
+  padding: 1em;
+}
+/* alería de fotos */
+/* Contenedor de la galería de cultivos */
+#galeriaCultivos {
+  text-align: center;
+}
+/* Tarjeta individual de la galería */
+.galeria {
+  display: inline-block;
+  margin-bottom: 1em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgb(255, 0, 0);
+  background: #000000;
+}
+/* Imagen de la galería */
+#fotoCultivo {
+  width: 320px;
+  height: 200px;
+  object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+  border-radius: 14px;
+}
+/* Botones de navegación de la galería */
+/* Botones principales ultra-simplificados */
+button, #btnClima {
+  background: #388e3c;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+button:hover, #btnClima:hover, #btnClima:focus {
+  background: #2d4739;
+}
+/* Formulario de registro de siembras*/
+/* Contenedor del formulario de registro */
+#registroSiembras form {
+  background: #c8ffc8;
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  max-width: 400px;
+  margin: auto;
+}
+/* Etiquetas del formulario de registro */
+#registroSiembras label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+/* Campos de texto y fecha del formulario de registro */
+#registroSiembras input[type="text"],
+#registroSiembras input[type="date"] {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border: 1px solid #b2f7ef;
+  border-radius: 8px;
+  font-size: 1em;
+}
+/* Botón de enviar del formulario de registro */
+#registroSiembras button[type="submit"] {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+/* Efecto hover en el botón de registro */
+#registroSiembras button[type="submit"]:hover {
+  background: #2d4739;
+}
+/* Avisos de validación del formulario de registro */
+#avisoNombre,
+#avisoFecha {
+  font-size: 0.9em;
+  color: #d32f2f;
+  min-height: 1.2em;
+}
+/* Barras de producción*/
+/* Contenedor de las barras de producción */
+.barras {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+  height: 40px;
+  align-items: flex-end;
+}
+/* Barra individual de producción */
+.barra {
+  background: #8df48f;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #2d4739;
+  font-weight: bold;
+}
+/* Etiqueta de valor sobre la barra */
+.barra span {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+}
+/* Lista de cultivos */
+#cultivos ul {
+  list-style: none; /* Sin viñetas */
+  padding: 0;
+  max-width: 300px;
+  margin: auto;
+}
+/* Elemento individual de la lista de cultivos */
+.itemCultivo {
+  padding: 0.7em 1em;
+  margin-bottom: 0.3em;
+  background: #e0ffe0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+	/*Sección de clima*/
+/* Contenedor de la sección de clima */
+#clima {
+  text-align: center;
+  background: #f7fff7;
+  border-radius: 14px;
+  margin-bottom: 4em;
+}
+/* Botón de clima */
+button {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.5em;
+  font-size: 1em;
+  border-radius: 16px;
+  cursor: pointer;
+  margin: 1em 0 1.2em 0;
+}
+button:hover,
+button:focus {
+  background: #2d4739;
+}
+/* Botón flotante de menú */
+#btnMenu {
+  background: #fff;
+  color: #388e3c;
+  border: none;
+  padding: 0.5em 1.5em;
+  font-size: 1.1em;
+  border-radius: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5em;
+  left: 2em;
+  box-shadow: 0 2px 8px #388e3c22;
+  z-index: 1100;
+  font-weight: bold;
+  outline: none;
+}
+/* Efecto hover y focus en el botón de menú */
+#btnMenu:hover,
+#btnMenu:focus {
+  background: #b2f7ef;
+  color: #2d4739;
+  box-shadow: 0 4px 16px #388e3c33;
+}
+/* Panel lateral del menú cuando está abierto */
+#panelMenu {
+  position: fixed;
+  left: -240px;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background: #2d4739;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 2px 0 16px #0003;
+  z-index: 1001;
+  transition: left 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  display: block;
+  padding-top: 4em;
+}
+/* Cuando el menú lateral está abierto */
+#panelMenu.abierto {
+  left: 0;
+}
+/* Capa de fondo oscurecida cuando el menú está abierto */
+#menuOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+/* Pie de página */
+footer {
+  text-align: center;
+  background: #388e3c;
+  color: #fff;
+  padding: 1em 0;
+  border-radius: 0 0 20px 20px;
+  margin-top: 2em;
+}
+/* Estilo sutil para la sección de contacto */
+#contacto {
+  background: #f7fff7;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #388e3c22;
+  padding: 1.5em 1em;
+  max-width: 450px;
+  margin: 2em auto;
+}
+
